@@ -22,22 +22,6 @@ test.describe('registration', () => {
 
     test.describe('name field checks', () => {
         
-        // test.beforeEach(async ({page}) => {
-        //     await page.goto(main_page)
-        //     await page.getByRole('button', {name: 'Sign In'}).click()
-        //     await page.getByRole('button', {name: 'Registration'}).click()
-        //     //await page.waitForTimeout(1000);
-        // })
-
-        
-        // async function checkErrorMessage(page, error_message_text) {
-        //     //await page.waitForTimeout(1000);
-        //     const error_message = page.locator('div.invalid-feedback')
-        //     await expect(error_message).toHaveText(error_message_text)
-        //     await expect(error_message).toHaveCSS('color', 'rgb(220, 53, 69)')   //#dc3545
-        //     await page.waitForTimeout(1000);
-        // }
-
         test('Name field, error appears when name is shorter than 2 letters', async ({page}) => {
             const nameInput = page.locator('#signupName')   //page.getByRole('textbox', {name: 'name'})
             await expect(nameInput).toBeEmpty ()
@@ -305,8 +289,8 @@ test.describe('registration', () => {
 
             const emailInput = page.locator('#signupEmail')   
             await expect(emailInput).toBeEmpty ()
-            await emailInput.fill('_emailname5@gmail.com')
-            await expect(emailInput).toHaveValue('_emailname5@gmail.com')
+            await emailInput.fill('_emailname6@gmail.com')
+            await expect(emailInput).toHaveValue('_emailname6@gmail.com')
             await emailInput.press('Tab')
 
             const passwordInput = page.locator('#signupPassword')
@@ -372,7 +356,7 @@ test.describe('registration', () => {
             await page.goto(main_page)
             await page.getByRole('button', {name: 'Sign In'}).click()
             const emailInput = page.locator('#signinEmail')
-            await emailInput.fill('_emailname5@gmail.com')
+            await emailInput.fill('_emailname6@gmail.com')
             const passwordInput = page.locator('#signinPassword')
             await passwordInput.fill('WorldWorldWord1')
             await page.getByRole('button', {name: 'Login'}).click()
