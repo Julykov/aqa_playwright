@@ -362,7 +362,7 @@ test.describe('registration', () => {
 })
 
 
-test.describe.only('registration', () => {
+test.describe('registration', () => {
     
     const main_page = 'https://qauto.forstudy.space/'
     
