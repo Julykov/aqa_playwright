@@ -291,8 +291,8 @@ test.describe('registration', () => {
 
             const emailInput = page.locator('#signupEmail')   
             await expect(emailInput).toBeEmpty ()
-            await emailInput.fill('_emailname7@gmail.com')
-            await expect(emailInput).toHaveValue('_emailname7@gmail.com')
+            await emailInput.fill('_emailname8@gmail.com')
+            await expect(emailInput).toHaveValue('_emailname8@gmail.com')
             await emailInput.press('Tab')
 
             const passwordInput = page.locator('#signupPassword')
@@ -359,7 +359,7 @@ test.describe('registration', () => {
             await page.goto('/')
             await page.getByRole('button', {name: 'Sign In'}).click()
             const emailInput = page.locator('#signinEmail')
-            await emailInput.fill('_emailname7@gmail.com')
+            await emailInput.fill('_emailname8@gmail.com')
             const passwordInput = page.locator('#signinPassword')
             await passwordInput.fill('WorldWorldWord1')
             await page.getByRole('button', {name: 'Login'}).click()
