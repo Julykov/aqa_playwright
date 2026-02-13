@@ -1,12 +1,14 @@
 import { test, expect } from '@playwright/test';
-
+//import dotenv from 'dotenv';
+//dotenv.config();
 
 test.describe('registration', () => {
     
-    const main_page = 'https://qauto.forstudy.space/'
+    //const main_page = process.env.BASE_URL;
     
     test.beforeEach(async ({page}) => {
-        await page.goto(main_page)
+        //await page.goto(main_page)
+        await page.goto('/')
         await page.getByRole('button', {name: 'Sign In'}).click()
         await page.getByRole('button', {name: 'Registration'}).click()
         //await page.waitForTimeout(1000);
@@ -289,8 +291,8 @@ test.describe('registration', () => {
 
             const emailInput = page.locator('#signupEmail')   
             await expect(emailInput).toBeEmpty ()
-            await emailInput.fill('_emailname6@gmail.com')
-            await expect(emailInput).toHaveValue('_emailname6@gmail.com')
+            await emailInput.fill('_emailname7@gmail.com')
+            await expect(emailInput).toHaveValue('_emailname7@gmail.com')
             await emailInput.press('Tab')
 
             const passwordInput = page.locator('#signupPassword')
@@ -348,15 +350,16 @@ test.describe('registration', () => {
 
 test.describe('registration', () => {
     
-    const main_page = 'https://qauto.forstudy.space/'
+    //const main_page = process.env.BASE_URL;
     
     test.describe('name field checks', () => {
         
         test('Login to the site with correct credentials', async ({page}) => {
-            await page.goto(main_page)
+            //await page.goto(main_page)
+            await page.goto('/')
             await page.getByRole('button', {name: 'Sign In'}).click()
             const emailInput = page.locator('#signinEmail')
-            await emailInput.fill('_emailname6@gmail.com')
+            await emailInput.fill('_emailname7@gmail.com')
             const passwordInput = page.locator('#signinPassword')
             await passwordInput.fill('WorldWorldWord1')
             await page.getByRole('button', {name: 'Login'}).click()
