@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test:22:report": "npx playwright show-report --port 9999",
+    "test:22:ui": "npx playwright test tests/hw_24 --ui",
+    "test:22": "npx playwright test tests/hw_24",
+    "test:22:headed": "npx playwright test tests/hw_24 --headed"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Julykov/aqa_playwright.git"
@@ -18,6 +23,7 @@
   "homepage": "https://github.com/Julykov/aqa_playwright#readme",
   "devDependencies": {
     "@playwright/test": "^1.58.1",
-    "@types/node": "^25.2.0"
+    "@types/node": "^25.2.0",
+    "dotenv": "^17.2.4"
   }
 }
