@@ -1,6 +1,8 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
 
+require('dotenv').config();
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -36,12 +38,12 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
-
+    baseURL: process.env.BASE_URL,
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     httpCredentials: {
-        username: "guest",
-        password: "welcome2qauto"
+        username: process.env.HTTP_CREDENTIALS_USERNAME,
+        password: process.env.HTTP_CREDENTIALS_PASSWORD
     }
   },
   /* Configure projects for major browsers */
