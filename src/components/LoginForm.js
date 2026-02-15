@@ -25,9 +25,4 @@ export class LoginForm extends BaseForm{
         //await page.waitForTimeout(1000);
     }
 
-    // clickLoginButtom() {
-    //     this.loginButton.click()
-    //     return this
-    // }
-
 }

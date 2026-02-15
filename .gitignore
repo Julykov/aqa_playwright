@@ -9,4 +9,4 @@ tmp/
 temp/
 .env
 test_results/
-src/utils/output/
+src/utils/output/emails_history.txt
