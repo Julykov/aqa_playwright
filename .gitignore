@@ -6,5 +6,7 @@ node_modules/
 /playwright/.cache/
 /playwright/.auth/
 tmp/
+temp/
 .env
 test_results/
+src/utils/output/

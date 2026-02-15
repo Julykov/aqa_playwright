@@ -3,11 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
+  "lesson_22_scripts": {
     "test:22:report": "npx playwright show-report --port 9999",
     "test:22:ui": "npx playwright test tests/hw_24 --ui",
     "test:22": "npx playwright test tests/hw_24",
     "test:22:headed": "npx playwright test tests/hw_24 --headed"
+  },
+  "scripts": {
+    "test:25:report": "npx playwright show-report --port 9999",
+    "test:25:ui": "npx playwright test tests/hw_25 --ui",
+    "test:25": "npx playwright test tests/hw_25/ --reporter=list",
+    "test:25:headed": "npx playwright test tests/hw_25 --headed"
   },
   "repository": {
     "type": "git",
