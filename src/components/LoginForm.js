@@ -22,7 +22,6 @@ export class LoginForm extends BaseForm{
     async openForm() {
         await super.openForm();
         await this.page.getByRole('button', {name: 'Sign In'}).click()
-        //await page.waitForTimeout(1000);
     }
 
 }
