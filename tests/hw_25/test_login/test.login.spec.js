@@ -22,7 +22,7 @@ test.describe('login form checks', () => {
         await loginForm.populateField(passwordInput, 'WorldWorldWord1')
         await expect(passwordInput).toHaveValue('WorldWorldWord1')
     
-        loginForm.clickButton(loginForm.loginButton)
+        await loginForm.clickButton(loginForm.loginButton)
         
         const profileDropdown = page.locator('#userNavDropdown')
         await expect(profileDropdown).toBeVisible()
