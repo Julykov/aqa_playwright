@@ -9,13 +9,13 @@ export class BaseForm {
         await this.page.goto(this.url)
     }
 
-    populateField(fieldInput, fieldInputValue) {
-        fieldInput.fill(fieldInputValue)
+    async populateField(fieldInput, fieldInputValue) {
+        await fieldInput.fill(fieldInputValue)
         return this
     }
 
-    clickButton(button) {
-        button.click()
+    async clickButton(button) {
+        await button.click()
         return this
     }
 

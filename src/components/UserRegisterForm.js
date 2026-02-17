@@ -35,7 +35,6 @@ export class UserRegisterForm extends BaseForm {
         await super.openForm();
         await this.page.getByRole('button', {name: 'Sign In'}).click()
         await this.page.getByRole('button', {name: 'Registration'}).click()
-        //await page.waitForTimeout(1000);
     }
 
 }

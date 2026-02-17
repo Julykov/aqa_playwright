@@ -22,14 +22,14 @@ test.describe('registration, email field checks', () => {
         await registerForm.populateField(emailInput, EmailValue)
         await expect(emailInput).toHaveValue(EmailValue)
         await press_tab(emailInput)
-        await checkErrorMessage(page, 'Email is incorrect')
+        await checkErrorMessage(page, emailInput, 'Email is incorrect')
     })
 
     test('Email field, error appears when email was not set', async ({page}) => {
         const emailInput = registerForm.userEmailInput 
         await emailInput.focus()
         await press_tab(emailInput)
-        await checkErrorMessage(page, 'Email required')
+        await checkErrorMessage(page, emailInput, 'Email required')
     })
 
 })

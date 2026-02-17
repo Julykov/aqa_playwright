@@ -14,12 +14,12 @@ test.describe('login form checks', () => {
 
         const emailInput = loginForm.userEmailInput
         await expect(emailInput).toBeEmpty()
-        loginForm.populateField(emailInput, '_emailname6@gmail.com')
+        await loginForm.populateField(emailInput, '_emailname6@gmail.com')
         await expect(emailInput).toHaveValue('_emailname6@gmail.com')
 
         const passwordInput = loginForm.userPasswordInput
         await expect(passwordInput).toBeEmpty()
-        loginForm.populateField(passwordInput, 'WorldWorldWord1')
+        await loginForm.populateField(passwordInput, 'WorldWorldWord1')
         await expect(passwordInput).toHaveValue('WorldWorldWord1')
     
         loginForm.clickButton(loginForm.loginButton)

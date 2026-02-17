@@ -21,7 +21,7 @@ test.describe('registration, password field checks', () => {
         const passwordInput = registerForm.userPasswordInput    
         await passwordInput.focus()
         await press_tab(passwordInput)
-        await checkErrorMessage(page, 'Password required')
+        await checkErrorMessage(page, passwordInput, 'Password required')
     })  
 
     test('Password field, error appears when password length is less than 8', async ({page}) => {
@@ -31,7 +31,7 @@ test.describe('registration, password field checks', () => {
         await registerForm.populateField(passwordInput, short_password)
         await expect(passwordInput).toHaveValue(short_password)
         await press_tab(passwordInput)
-        await checkErrorMessage(page, password_content_error_text)
+        await checkErrorMessage(page, passwordInput, password_content_error_text)
     })
     
     test('Password field, error appears when password length is longer than 15 symbols', async ({page}) => {
@@ -41,7 +41,7 @@ test.describe('registration, password field checks', () => {
         await registerForm.populateField(passwordInput, PasswordValue)
         await expect(passwordInput).toHaveValue(PasswordValue)
         await press_tab(passwordInput)
-        await checkErrorMessage(page, password_content_error_text)
+        await checkErrorMessage(page, passwordInput, password_content_error_text)
     })
 
     test('Password field, error appears when password contains none digits', async ({page}) => {
@@ -51,7 +51,7 @@ test.describe('registration, password field checks', () => {
         await registerForm.populateField(passwordInput, PasswordValue)
         await expect(passwordInput).toHaveValue(PasswordValue)
         await press_tab(passwordInput)
-        await checkErrorMessage(page, password_content_error_text)
+        await checkErrorMessage(page, passwordInput, password_content_error_text)
     })
 
     test('Password field, error appears when password contains none capital', async ({page}) => {
@@ -61,7 +61,7 @@ test.describe('registration, password field checks', () => {
         await registerForm.populateField(passwordInput, PasswordValue)
         await expect(passwordInput).toHaveValue(PasswordValue)
         await press_tab(passwordInput)
-        await checkErrorMessage(page, password_content_error_text)
+        await checkErrorMessage(page, passwordInput, password_content_error_text)
     })
 
     test('Password field, error appears when password contains none lower-cased letter', async ({page}) => {
@@ -71,7 +71,7 @@ test.describe('registration, password field checks', () => {
         await registerForm.populateField(passwordInput, PasswordValue)
         await expect(passwordInput).toHaveValue(PasswordValue)
         await press_tab(passwordInput)
-        await checkErrorMessage(page, password_content_error_text)
+        await checkErrorMessage(page, passwordInput, password_content_error_text)
     })
 
 })

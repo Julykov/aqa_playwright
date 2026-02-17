@@ -21,7 +21,7 @@ test.describe('registration, repeat password field checks', () => {
         const repeatPasswordInput = registerForm.userRepeatPasswordInput    
         await repeatPasswordInput.focus()
         await press_tab(repeatPasswordInput)
-        await checkErrorMessage(page, password_empty)
+        await checkErrorMessage(page, repeatPasswordInput, password_empty)
     })  
 
     test('Repeat password field, error appears when password doesnt match to first password', async ({page}) => {
@@ -37,7 +37,7 @@ test.describe('registration, repeat password field checks', () => {
         await registerForm.populateField(repeatPasswordInput, passwordValue2)
         await expect(repeatPasswordInput).toHaveValue(passwordValue2)
         await press_tab(repeatPasswordInput)
-        await checkErrorMessage(page, password_repeat_error_msg)
+        await checkErrorMessage(page, repeatPasswordInput, password_repeat_error_msg)
     })
     
 })

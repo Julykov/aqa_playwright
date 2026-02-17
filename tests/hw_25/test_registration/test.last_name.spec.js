@@ -22,7 +22,7 @@ test.describe('registration, last name field checks', () => {
         await registerForm.populateField(lastNameInput, lastNameValue)
         await expect(lastNameInput).toHaveValue(lastNameValue)
         await press_tab(lastNameInput)
-        await checkErrorMessage(page, 'Last name has to be from 2 to 20 characters long')
+        await checkErrorMessage(page, lastNameInput, 'Last name has to be from 2 to 20 characters long')
     })
 
     test('Last name field, error appears when last name is longer than 20 letters', async ({page}) => {
@@ -32,7 +32,7 @@ test.describe('registration, last name field checks', () => {
         await registerForm.populateField(lastNameInput, lastNameValue)
         await expect(lastNameInput).toHaveValue(lastNameValue)
         await press_tab(lastNameInput)
-        await checkErrorMessage(page, 'Last name has to be from 2 to 20 characters long')
+        await checkErrorMessage(page, lastNameInput, 'Last name has to be from 2 to 20 characters long')
     })
 
     test('Last name field, error appears when last name is set as 1 digit', async ({page}) => {
@@ -42,7 +42,7 @@ test.describe('registration, last name field checks', () => {
         await registerForm.populateField(lastNameInput, lastNameValue)
         await expect(lastNameInput).toHaveValue(lastNameValue)
         await press_tab(lastNameInput)
-        await checkErrorMessage(page, 'Last name is invalidLast name has to be from 2 to 20 characters long')
+        await checkErrorMessage(page, lastNameInput, 'Last name is invalidLast name has to be from 2 to 20 characters long')
     })
 
     test('Last name field, error appears when last name was not set', async ({page}) => {
@@ -50,7 +50,7 @@ test.describe('registration, last name field checks', () => {
         await expect(lastNameInput).toBeEmpty ()
         await lastNameInput.focus()
         await press_tab(lastNameInput)
-        await checkErrorMessage(page, 'Last name required')
+        await checkErrorMessage(page, lastNameInput, 'Last name required')
     })
 
     test('Last name field, error appears when last name is set as space', async ({page}) => {
@@ -60,7 +60,7 @@ test.describe('registration, last name field checks', () => {
         await registerForm.populateField(lastNameInput, lastNameValue)
         await expect(lastNameInput).toHaveValue(lastNameValue)
         await press_tab(lastNameInput)
-        await checkErrorMessage(page, 'Last name is invalidLast name has to be from 2 to 20 characters long')
+        await checkErrorMessage(page, lastNameInput, 'Last name is invalidLast name has to be from 2 to 20 characters long')
     })
 
     test('Last name field, error appears when last name is set as letter and space', async ({page}) => {
@@ -70,7 +70,7 @@ test.describe('registration, last name field checks', () => {
         await registerForm.populateField(lastNameInput, lastNameValue)
         await expect(lastNameInput).toHaveValue(lastNameValue)
         await press_tab(lastNameInput)
-        await checkErrorMessage(page, 'Last name is invalid')
+        await checkErrorMessage(page, lastNameInput, 'Last name is invalid')
     })
         
     test('Last name field, error appears when last name is set as special symbol', async ({page}) => {
@@ -80,7 +80,7 @@ test.describe('registration, last name field checks', () => {
         await registerForm.populateField(lastNameInput, lastNameValue)
         await expect(lastNameInput).toHaveValue(lastNameValue)
         await press_tab(lastNameInput)
-        await checkErrorMessage(page, 'Last name is invalidLast name has to be from 2 to 20 characters long')
+        await checkErrorMessage(page, lastNameInput, 'Last name is invalidLast name has to be from 2 to 20 characters long')
     })
 
     test('Last name field, error appears when last name is set as letters and digit', async ({page}) => {
@@ -90,7 +90,7 @@ test.describe('registration, last name field checks', () => {
         await registerForm.populateField(lastNameInput, lastNameValue)
         await expect(lastNameInput).toHaveValue(lastNameValue)
         await press_tab(lastNameInput)
-        await checkErrorMessage(page, 'Last name is invalid')
+        await checkErrorMessage(page, lastNameInput, 'Last name is invalid')
     })
 
 })

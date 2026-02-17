@@ -3,12 +3,10 @@
     import fs from 'fs';
 
 
-    export async function checkErrorMessage(page, error_message_text) {
-        //await page.waitForTimeout(1000);
-        const error_message = page.locator('div.invalid-feedback')
+    export async function checkErrorMessage(page, fieldLocator, error_message_text) {
+        const error_message = page.locator('.form-group').filter({ has: fieldLocator }).locator('div.invalid-feedback')
         await expect(error_message).toHaveText(error_message_text)
-        await expect(error_message).toHaveCSS('color', 'rgb(220, 53, 69)')   //#dc3545
-        await page.waitForTimeout(1000);
+        await expect(error_message).toHaveCSS('color', 'rgb(220, 53, 69)')      //#dc3545
     }
 
     export async function press_tab(inputField) {

@@ -22,7 +22,7 @@ test.describe('registration, name field checks', () => {
         await registerForm.populateField(nameInput, nameValue)
         await expect(nameInput).toHaveValue(nameValue)
         await press_tab(nameInput)
-        await checkErrorMessage(page, 'Name has to be from 2 to 20 characters long')
+        await checkErrorMessage(page, nameInput, 'Name has to be from 2 to 20 characters long')
     })
 
     test('Name field, error appears when name is longer than 20 letters', async ({page}) => {
@@ -32,7 +32,7 @@ test.describe('registration, name field checks', () => {
         await registerForm.populateField(nameInput, nameValue)
         await expect(nameInput).toHaveValue(nameValue)
         await press_tab(nameInput)
-        await checkErrorMessage(page, 'Name has to be from 2 to 20 characters long')
+        await checkErrorMessage(page, nameInput, 'Name has to be from 2 to 20 characters long')
     })
 
     test('Name field, error appears when name is set as 1 digit', async ({page}) => {
@@ -42,7 +42,7 @@ test.describe('registration, name field checks', () => {
         await registerForm.populateField(nameInput, nameValue)
         await expect(nameInput).toHaveValue(nameValue)
         await press_tab(nameInput)
-        await checkErrorMessage(page, 'Name is invalidName has to be from 2 to 20 characters long')
+        await checkErrorMessage(page, nameInput, 'Name is invalidName has to be from 2 to 20 characters long')
     })
     
     test('Name field, error appears when name was not set', async ({page}) => {
@@ -50,7 +50,7 @@ test.describe('registration, name field checks', () => {
         await expect(nameInput).toBeEmpty ()
         await nameInput.focus()
         await press_tab(nameInput)
-        await checkErrorMessage(page, 'Name required')
+        await checkErrorMessage(page, nameInput, 'Name required')
     })    
 
     test('Name field, error appears when name is set as space', async ({page}) => {
@@ -60,7 +60,7 @@ test.describe('registration, name field checks', () => {
         await registerForm.populateField(nameInput, nameValue)
         await expect(nameInput).toHaveValue(nameValue)
         await press_tab(nameInput)
-        await checkErrorMessage(page, 'Name is invalidName has to be from 2 to 20 characters long')
+        await checkErrorMessage(page, nameInput, 'Name is invalidName has to be from 2 to 20 characters long')
     })
 
     test('Name field, error appears when name is set as letter and space', async ({page}) => {
@@ -70,7 +70,7 @@ test.describe('registration, name field checks', () => {
         await registerForm.populateField(nameInput, nameValue)
         await expect(nameInput).toHaveValue(nameValue)
         await press_tab(nameInput)
-        await checkErrorMessage(page, 'Name is invalid')
+        await checkErrorMessage(page, nameInput, 'Name is invalid')
     })
 
     test('Name field, error appears when name is set as special symbol', async ({page}) => {
@@ -80,7 +80,7 @@ test.describe('registration, name field checks', () => {
         await registerForm.populateField(nameInput, nameValue)
         await expect(nameInput).toHaveValue(nameValue)
         await press_tab(nameInput)
-        await checkErrorMessage(page, 'Name is invalidName has to be from 2 to 20 characters long')
+        await checkErrorMessage(page, nameInput, 'Name is invalidName has to be from 2 to 20 characters long')
     })
 
     test('Name field, error appears when name is set as letters and digit', async ({page}) => {
@@ -90,7 +90,7 @@ test.describe('registration, name field checks', () => {
         await registerForm.populateField(nameInput, nameValue)
         await expect(nameInput).toHaveValue(nameValue)
         await press_tab(nameInput)
-        await checkErrorMessage(page, 'Name is invalid')
+        await checkErrorMessage(page, nameInput, 'Name is invalid')
     })
 
 })
