@@ -14,5 +14,9 @@ export const test = base.extend ({
         await garagePage.clickAddCarFinishButton()
         
         await use(garagePage)
+
+        await garagePage.clickEditCarButton()
+        await garagePage.clickRemoveCarButton()
+        await garagePage.clickRemoveCarConfirmButton()
     }
 })

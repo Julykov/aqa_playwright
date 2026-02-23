@@ -26,6 +26,39 @@ export class GaragePage extends BaseForm {
         return this.page.locator('.modal-footer > .btn-primary')
     }
 
+    get profileDropdown() {
+        return this.page.locator('#userNavDropdown')
+    }
+
+    get updateMileageRecent() {
+        const today = new Date().toLocaleDateString('uk-UA');
+        return this.page.locator('p.car_update-mileage', { hasText: today}).first()
+    }
+
+    get editCarButton() {
+        return this.page.locator('.car_edit').first()
+    }
+
+    get removeCarButton() {
+        return this.page.locator('.btn-outline-danger')
+    }
+
+    get removeCarConfirmButton() {
+        return this.page.locator('.btn-danger')
+    }
+
+    async clickRemoveCarConfirmButton() {
+        await this.removeCarConfirmButton.click()
+    }
+
+    async clickRemoveCarButton() {
+        await this.removeCarButton.click()
+    }
+
+    async clickEditCarButton() {
+        await this.editCarButton.click()
+    }
+
     async clickAddCarButton() {
         await this.addCarButton.click()
     }
