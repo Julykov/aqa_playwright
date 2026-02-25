@@ -15,6 +15,7 @@ export class BaseForm {
     }
 
     async clickButton(button) {
+        await button.waitFor({ state: 'visible'})
         await button.click()
         return this
     }

@@ -42,15 +42,28 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     httpCredentials: {
-        username: process.env.HTTP_CREDENTIALS_USERNAME,
-        password: process.env.HTTP_CREDENTIALS_PASSWORD
+      // @ts-ignore
+      username: process.env.HTTP_CREDENTIALS_USERNAME,
+      // @ts-ignore
+      password: process.env.HTTP_CREDENTIALS_PASSWORD
     }
   },
   /* Configure projects for major browsers */
   projects: [
+    { 
+      name: 'setup', 
+      testMatch: /.*\.setup\.js/ ,
+      use: {
+        headless: true
+      }
+    },
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { 
+        ...devices['Desktop Chrome'],
+        storageState: 'playwright/.auth/user.json' 
+      },
+      dependencies: ['setup']
     },
 
     // {
