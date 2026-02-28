@@ -47,6 +47,18 @@ export class GaragePage extends BaseForm {
         return this.page.locator('.btn-danger')
     }
 
+    get profileSidebarLink() {
+        return this.page.getByRole('link', { name: 'Profile' })
+    }
+
+    get profileFullName() {
+        return this.page.locator('p.profile_name')
+    }
+
+    async clickProfileSidebarLink() {
+        await this.profileSidebarLink.click()
+    }
+
     async clickRemoveCarConfirmButton() {
         await this.removeCarConfirmButton.click()
     }

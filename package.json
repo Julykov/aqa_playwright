@@ -12,7 +12,11 @@
     "test:25": "npx playwright test tests/hw_25/ --reporter=list",
     "test:25:headed": "npx playwright test tests/hw_25 --headed",
     "test:28": "npx playwright test tests/hw_28/ --reporter=list",
-    "test:28:headed": "npx playwright test tests/hw_28 --headed"
+    "test:28:headed": "npx playwright test tests/hw_28 --headed",
+    "test:29": "npx playwright test tests/hw_29/ --reporter=list",
+    "test:29:headed": "npx playwright test tests/hw_29 --headed",
+    "test:29_2": "npx playwright test tests/hw_29/test_29_2.spec.js --reporter=list",
+    "test:29_2:headed": "npx playwright test tests/test_29_2.spec.js --headed"
   },
   "repository": {
     "type": "git",
