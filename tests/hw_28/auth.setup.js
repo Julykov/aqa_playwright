@@ -28,6 +28,11 @@ setup('authenticate', async ({page}) => {
         origins: state.origins.filter(entry => {return entry.origin.includes('forstudy.space')}),
     }
 
+    const targetDir = path.dirname(authFile);
+    if (!fs.existsSync(targetDir)) {
+        fs.mkdirSync(targetDir, { recursive: true });
+    }
+
     fs.writeFileSync(authFile, JSON.stringify(cleanState, null, 2), 'utf-8')
 
 })
