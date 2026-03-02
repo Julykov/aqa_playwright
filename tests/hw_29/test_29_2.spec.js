@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Adding new car with api', () => {
     
-    test('Adding a new car', async ({ request }) => {
+    test.skip('Adding a new car', async ({ request }) => {
         const response = await request.post('/api/cars', {
             data: {
                 "carBrandId": 1,

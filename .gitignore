@@ -10,3 +10,5 @@ temp/
 .env
 test_results/
 src/utils/output/emails_history.txt
+junit-report/
+test-results.json
