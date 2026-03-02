@@ -6,6 +6,11 @@ on:
     branches: [ main, master ]
 jobs:
   playwright-run:
+    permissions:
+      contents: read
+      issues: read
+      checks: write
+      pull-requests: write
     timeout-minutes: 60
     runs-on: ubuntu-latest
     container:
