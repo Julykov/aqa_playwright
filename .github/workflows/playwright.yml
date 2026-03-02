@@ -51,6 +51,6 @@ jobs:
       if: always()
       uses: peaceiris/actions-gh-pages@v4
       with:
-        github_token: ${{ secrets:ACCESS_TOKEN }}
+        github_token: ${{ secrets.ACCESS_TOKEN }}
         publish_branch: gh-pages
         publish_dir: ./monocart-report-ui
