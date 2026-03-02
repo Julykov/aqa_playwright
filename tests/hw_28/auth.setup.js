@@ -1,6 +1,7 @@
 import { LoginForm } from '../../src/components/LoginForm';
 import { test as setup, expect } from '@playwright/test';
 import fs from 'fs';
+const path = require('path');
 import dotenv from 'dotenv';
 dotenv.config();
 
